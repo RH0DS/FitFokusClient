@@ -1,9 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
+import LoginButton from "./LoginButton";
+
+
 
 const NavMenu = () => {
   return (
     <>
       <nav>
+        <LoginButton/>
+
         <ul>
           <li>
             <Link to="/">Home</Link>
