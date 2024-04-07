@@ -1,3 +1,1 @@
-Hej hej
-
-varför får jag inte göra en push?
+Silly app for competitive fat loss
