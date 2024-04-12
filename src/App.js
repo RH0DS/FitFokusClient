@@ -1,26 +1,34 @@
 import './App.css';
 
-import { BrowserRouter,Routes, Route, Navigate  } from 'react-router-dom';
-import { useState, useAuth }                      from "react";
-import Dashboard                                  from './Pages/Dashboard';
-import NavMenu                                    from './Components/NavMenu';
-import NoPage                                     from './Pages/NoPage';
-import ProfilePage                                from './Pages/ProfilePage'
-import HistoryPage                                from './Pages/HistoryPage'
-import RegisterResultPage                         from './Pages/RegisterResultPage';
-import LoginPage                                  from './Pages/LoginPage';
+import { BrowserRouter, Routes, Route, Navigate, Outlet  }   from 'react-router-dom';
+import { useState, useAuth }                        from "react";
+import Dashboard                                    from './Pages/Dashboard';
+import NavMenu                                      from './Components/NavMenu';
+import NoPage                                       from './Pages/NoPage';
+import ProfilePage                                  from './Pages/ProfilePage'
+import HistoryPage                                  from './Pages/HistoryPage'
+import RegisterResultPage                           from './Pages/RegisterResultPage';
+import LoginPage                                    from './Pages/LoginPage';
+import { useAuth0 }                                 from '@auth0/auth0-react';
 
 
 
 
 
 
-// function PrivateRoute({ element, ...rest }) {
-//   const { isLoggedIn } = useAuth();
 
-//   return isLoggedIn ? element : <Navigate to="/login" replace />;
-// }
 function App() {
+    function PrivateRoute({ element, ...rest }) {
+        const { isLoading, isAuthenticated, loginWithRedirect } = useAuth0();
+
+
+        if (isAuthenticated)
+       {  loginWithRedirect() }
+
+        return isAuthenticated ? Outlet : <Navigate to="/Profile" replace />;
+    }
+
+
   return (
     <BrowserRouter>
         <Routes>

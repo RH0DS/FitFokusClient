@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\Components",
+    "\\src\\Pages"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\Components\\NavMenu.js",
   "PreviewInSolutionExplorer": false
 }
