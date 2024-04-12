@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.github",
+    "\\.github\\workflows",
     "\\src",
     "\\src\\Components",
     "\\src\\Pages"
   ],
-  "SelectedNode": "\\src\\Components\\NavMenu.js",
+  "SelectedNode": "\\.github\\workflows\\azure-static-web-apps-polite-forest-006223403.yml",
   "PreviewInSolutionExplorer": false
 }
