@@ -11,7 +11,6 @@ import LoginPage from "../Pages/LoginPage";
 
             return(
             <Route {...rest} render={rest => (this.isAuthenticated ? <element{...rest}/> : <LoginPage/>)}/>)
-       
 
         }
 
