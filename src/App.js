@@ -9,7 +9,7 @@ import HistoryPage                                  from './Pages/HistoryPage'
 import RegisterResultPage                           from './Pages/RegisterResultPage';
 import LoginPage                                    from './Pages/LoginPage';
 import { useAuth0 }                                 from '@auth0/auth0-react';
-import { Fragment } from 'react';
+
 
 
 
