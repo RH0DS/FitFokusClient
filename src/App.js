@@ -27,12 +27,12 @@ function App() {
             <Route index element={<Dashboard />} />
             {/* index elementet (Dashboard i detta fall även känt som HOME) är det unika elemented som hör till roten */}
             <Route path="Profile" element={<ProfilePage />} />
+            <Route path="Login" element={<LoginPage />} />
             <Route path="History" element={<HistoryPage />} />      
             <Route path="RegisterResult" element={<RegisterResultPage />} />      
-      
-            <Route path="*" element={<NoPage />} />
-
+  
           </Route>
+          <Route path="*" element={<NoPage />} />
         </Routes>
     </BrowserRouter>
   );
