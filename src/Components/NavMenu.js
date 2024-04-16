@@ -1,15 +1,12 @@
 import { Outlet, Link } from "react-router-dom";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
+import "../NavMenu.css";
 
-
-
-const NavMenu = (isAuthenticated) => {
+const NavMenu = ({ isAuthenticated }) => {
   return (
     <>
       <nav>
-        {isAuthenticated ? <LogoutButton/> : <LoginButton/>}
-
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -24,11 +21,13 @@ const NavMenu = (isAuthenticated) => {
             <Link to="RegisterResult">Register result</Link>
           </li>
           <li>
-            <Link to="/contact">Contact ska visa no page</Link>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
+        <div className="login-button-container">
+          {isAuthenticated ? <LogoutButton/> : <LoginButton/>}
+        </div>
       </nav>
-
       <Outlet />
     </>
   )
