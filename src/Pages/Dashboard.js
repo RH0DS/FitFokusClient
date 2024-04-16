@@ -5,13 +5,14 @@ const Dashboard = () => {
   const [list, setList] = useState([]);
 
   //Default Mocklist until we hook up the real fetch
+
   const mockData = [
     { name: "Jacobi Douche", startWeight: 80, currentWeight: 75, waistWidth: 90 },
     { name: "Adamski Poopischow", startWeight: 70, currentWeight: 65, waistWidth: 85 },
     { name: "Robin the Great", startWeight: 75, currentWeight: 72, waistWidth: 88 },
     { name: "Kristofferoo the poo ", startWeight: 85, currentWeight: 82, waistWidth: 92 }
   ];
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     // Fetch data from the backend API
 
@@ -42,6 +43,7 @@ const Dashboard = () => {
 
     fetchData();
     setList(sortedList);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
