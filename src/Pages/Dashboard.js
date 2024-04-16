@@ -6,10 +6,10 @@ const Dashboard = () => {
 
   //Default Mocklist until we hook up the real fetch
   const mockData = [
-    { name: "John Doe", startWeight: 80, currentWeight: 75, waistWidth: 90 },
-    { name: "Jane Smith", startWeight: 70, currentWeight: 65, waistWidth: 85 },
-    { name: "Alice Johnson", startWeight: 75, currentWeight: 72, waistWidth: 88 },
-    { name: "Bob Brown", startWeight: 85, currentWeight: 82, waistWidth: 92 }
+    { name: "Jacobi Douche", startWeight: 80, currentWeight: 75, waistWidth: 90 },
+    { name: "Adamski Poopischow", startWeight: 70, currentWeight: 65, waistWidth: 85 },
+    { name: "Robin the Great", startWeight: 75, currentWeight: 72, waistWidth: 88 },
+    { name: "Kristofferoo the poo ", startWeight: 85, currentWeight: 82, waistWidth: 92 }
   ];
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -32,6 +32,21 @@ const Dashboard = () => {
     fetchData();
     setList(mockData);
   }, []);
+
+
+
+  //////////////// put this in the fetch list 
+  // Calculate weightChange for each user
+  const dataWithWeightChange = mockData.map(user => ({
+    ...user,
+    weightChange: ((user.currentWeight - user.startWeight) / user.startWeight) * 100
+  }));
+
+  // Sort the list by greatest weightChange
+  const sortedList = dataWithWeightChange.sort((a, b) => b.weightChange - a.weightChange);
+//////////////////
+
+
 
   return (
     <>
