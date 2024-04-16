@@ -19,6 +19,9 @@ jobs:
         with:
           submodules: true
           lfs: false
+        env:
+          REACT_APP_AUTH_DOMAIN:  ${{secrets.REACT_APP_AUTH_DOMAIN}}
+          REACT_APP_AUTH_CLIENTID:  ${{secrets.REACT_APP_AUTH_CLIENTID}}
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
