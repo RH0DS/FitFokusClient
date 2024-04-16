@@ -29,12 +29,6 @@ const Dashboard = () => {
       }
     };
 
-    fetchData();
-    setList(mockData);
-  }, []);
-
-
-
   //////////////// put this in the fetch list 
   // Calculate weightChange for each user
   const dataWithWeightChange = mockData.map(user => ({
@@ -43,8 +37,16 @@ const Dashboard = () => {
   }));
 
   // Sort the list by greatest weightChange
-  const sortedList = dataWithWeightChange.sort((a, b) => b.weightChange - a.weightChange);
+  const sortedList = dataWithWeightChange.sort((a, b) => a.weightChange - b.weightChange);
 //////////////////
+
+    fetchData();
+    setList(sortedList);
+  }, []);
+
+
+
+
 
 
 
