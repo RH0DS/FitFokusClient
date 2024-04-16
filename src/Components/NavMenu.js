@@ -1,13 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
 import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
 
 
 
-const NavMenu = () => {
+const NavMenu = (isAuthenticated) => {
   return (
     <>
       <nav>
-        <LoginButton/>
+        {isAuthenticated ? <LogoutButton/> : <LoginButton/>}
 
         <ul>
           <li>
