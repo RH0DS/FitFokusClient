@@ -11,19 +11,19 @@ const UserCard = ({ name, startWeight, currentWeight, waistWidth }) => {
       <h2>{name}</h2>
       <div className="user-info">
         <div>
-          <p><strong>Start Weight:</strong></p>
+          <p><strong>Start Vikt:</strong></p>
           <p>{startWeight} kg</p>
         </div>
         <div> 
-          <p><strong>Current Weight:</strong></p>
+          <p><strong>Nuvarande Vikt:</strong></p>
           <p>{currentWeight} kg</p>
         </div>
         <div>
-          <p><strong>Waist Width:</strong></p>
+          <p><strong>Midjemått:</strong></p>
           <p>{waistWidth} cm</p>
         </div>
         <div>
-          <p><strong>Weight Change:</strong></p>
+          <p><strong>Vikt ändring:</strong></p>
           <p>{weightChange.toFixed(2)}%</p>
         </div>
       </div>

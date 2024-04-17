@@ -7,8 +7,7 @@ const LoginPage = () => {
             Välkommen till login sidan! 
          
         </h1>
-        <button onClick={() => console.log(process.env.REACT_APP_AUTH_CLIENTID)}>heje</button>
-        <button onClick={() => console.log(process.env.REACT_APP_AUTH_DOMAIN)}>heje</button>
+
         <LoginButton/>
     </>
     );

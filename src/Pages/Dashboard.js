@@ -1,27 +1,43 @@
 import { useState, useEffect } from "react";
 import UserCard from "../Components/UserCard";
+import NavigateToPageButton from "../Components/NavigateToPageButton";
+
+
 
 const Dashboard = () => {
-  const [list, setList] = useState([]);
+  const calculateWeightChangeAndSort = (inputList) => {
+    // Calculate weightChange for each user
+    const dataWithWeightChange = inputList.map(user => ({
+      ...user,
+      weightChange: ((user.currentWeight - user.startWeight) / user.startWeight) * 100
+    }));
 
-  //Default Mocklist until we hook up the real fetch
+    // Sort the list by greatest weightChange
+    const sortedList = dataWithWeightChange.sort((a, b) => a.weightChange - b.weightChange);
+
+    setList(sortedList);
+  };
+
 
   const mockData = [
     { name: "Jacobi Douche", startWeight: 80, currentWeight: 75, waistWidth: 90 },
     { name: "Adamski Poopischow", startWeight: 70, currentWeight: 65, waistWidth: 85 },
-    { name: "Robin the Great", startWeight: 75, currentWeight: 72, waistWidth: 88 },
+    { name: "Robin the Great", startWeight: 75, currentWeight: 62, waistWidth: 88 },
     { name: "Kristofferoo the poo ", startWeight: 85, currentWeight: 82, waistWidth: 92 }
   ];
-
+    //Default Mocklist until we hook up the real fetch
+  const [list, setList] = useState(mockData);
+ 
   useEffect(() => {
     // Fetch data from the backend API
-
     const fetchData = async () => {
       try {
         const response = await fetch("your_backend_api_url_here");
         if (response.ok) {
           const data = await response.json();
-          setList(data); // Set the fetched list to state
+          // Set the fetched data to state after calculating weight change and sorting
+          calculateWeightChangeAndSort(data);
+          
         } else {
           throw new Error("Failed to fetch data");
         }
@@ -30,31 +46,29 @@ const Dashboard = () => {
       }
     };
 
-  //////////////// put this in the fetch list 
-  // Calculate weightChange for each user
-  const dataWithWeightChange = mockData.map(user => ({
-    ...user,
-    weightChange: ((user.currentWeight - user.startWeight) / user.startWeight) * 100
-  }));
-
-  // Sort the list by greatest weightChange
-  const sortedList = dataWithWeightChange.sort((a, b) => a.weightChange - b.weightChange);
-//////////////////
-
+    // Call the fetchData function
     fetchData();
-    setList(sortedList);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    calculateWeightChangeAndSort(mockData)
+    // eslint-disable-next-line
+  }, []); // Empty dependency array to run only once on component mount
 
 
 
-
-
-
+  // const dev = false;
 
   return (
     <>
-      <h1>List of Users</h1>
+
+      {/* { dev ?  <button onClick={()=> calculateWeightChangeAndSort(mockData)}>Dev tool: Uppdate list</button> : <h1></h1> } */}
+     
+      <NavigateToPageButton toThisPage={"RegisterResult"} buttonText={"Registrera ny vikt / mått"} />
+      <UserCard
+        name={list[0].name}
+        startWeight={list[0].startWeight}
+        currentWeight={list[0].currentWeight}
+        waistWidth={list[0].waistWidth}
+      />
+      <h1>Ställning</h1>
       <div className="user-cards">
         {list.map((user, index) => (
           <UserCard
