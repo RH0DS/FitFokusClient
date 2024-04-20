@@ -1,0 +1,83 @@
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* App.css */
+
+/* App.css */
+
+.background {
+    background-image: url('https://images.unsplash.com/photo-1503642551022-c011aafb3a7d'); /* Sporty background image */
+    background-size: cover; /* Cover the entire container */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-position: center; /* Center the background image */
+    min-height: 100vh; /* Set minimum height to cover the viewport */
+    padding: 20px; /* Add some padding for spacing */
+  }
+  
+  
+  .container {
+    background-image: url('https://images.unsplash.com/photo-1503642551022-c011aafb3a7d'); /* Sporty background image */
+    background-size: cover; /* Cover the entire container */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-position: center; /* Center the background image */
+    min-height: 100vh; /* Set minimum height to cover the viewport */
+    padding: 20px; /* Add some padding for spacing */
+  }
+  
+  nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    display: block; /* Change to block for mobile */
+    margin-bottom: 10px; /* Add margin between items */
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .login-button-container {
+    margin-left: 0; /* Remove margin */
+  }
+  
+  @media (min-width: 768px) {
+    /* Apply styles for screens wider than 768px (tablets and desktops) */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+  
+    li {
+      display: inline;
+      margin: 0;
+      margin-right: 20px;
+    }
+  
+    .login-button-container {
+      margin-left: auto;
+    }
+  }
+  

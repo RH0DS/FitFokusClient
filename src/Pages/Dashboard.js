@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import UserCard from "../Components/UserCard";
 import NavigateToPageButton from "../Components/NavigateToPageButton";
-
+import "../Dashboard.css"
 
 
 const Dashboard = () => {
@@ -17,7 +17,6 @@ const Dashboard = () => {
 
     setList(sortedList);
   };
-
 
   const mockData = [
     { name: "Jacobi Douche", startWeight: 80, currentWeight: 75, waistWidth: 90 },
@@ -57,30 +56,29 @@ const Dashboard = () => {
   // const dev = false;
 
   return (
-    <>
-
-      {/* { dev ?  <button onClick={()=> calculateWeightChangeAndSort(mockData)}>Dev tool: Uppdate list</button> : <h1></h1> } */}
-     
-      <NavigateToPageButton toThisPage={"RegisterResult"} buttonText={"Registrera ny vikt / mått"} />
-      <UserCard
-        name={list[0].name}
-        startWeight={list[0].startWeight}
-        currentWeight={list[0].currentWeight}
-        waistWidth={list[0].waistWidth}
-      />
-      <h1>Ställning</h1>
-      <div className="user-cards">
-        {list.map((user, index) => (
-          <UserCard
-            key={index}
-            name={user.name}
-            startWeight={user.startWeight}
-            currentWeight={user.currentWeight}
-            waistWidth={user.waistWidth}
-          />
-        ))}
+    <div className="center-container">
+      <div className="user-cards-container">
+        <NavigateToPageButton toThisPage={"RegisterResult"} buttonText={"Registrera ny vikt / mått"} />
+        <UserCard
+          name={list[0].name}
+          startWeight={list[0].startWeight}
+          currentWeight={list[0].currentWeight}
+          waistWidth={list[0].waistWidth}
+        />
+        <h1>Ställning</h1>
+        <div className="user-cards">
+          {list.map((user, index) => (
+            <UserCard
+              key={index}
+              name={user.name}
+              startWeight={user.startWeight}
+              currentWeight={user.currentWeight}
+              waistWidth={user.waistWidth}
+            />
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
