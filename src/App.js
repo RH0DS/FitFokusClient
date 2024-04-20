@@ -9,6 +9,7 @@ import HistoryPage                                  from './Pages/HistoryPage'
 import RegisterResultPage                           from './Pages/RegisterResultPage';
 import LoginPage                                    from './Pages/LoginPage';
 import { useAuth0 }                                 from '@auth0/auth0-react';
+import "./App.css";
 
 
 
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <div className="container"> {/* Apply container class */}
         <Routes>
           <Route path="/Login" element={<LoginPage/>}/>  
           {/* den första route med path "/" omsluter alla andra routes och blir då rot-urlen */}
@@ -34,6 +36,7 @@ function App() {
           </Route>
           <Route path="*" element={<NoPage />} />
         </Routes>
+        </div>
     </BrowserRouter>
   );
 }
