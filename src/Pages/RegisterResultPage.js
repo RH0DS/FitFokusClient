@@ -1,8 +1,19 @@
+import ReportForm from "../Components/ReportForm";
+import "../RegisterResultPage.css";
 const RegisterResultPage = () => {
+   
+   
+   
+   
     return (
-    
-    <h1> Här kommer du kunna rapportera dina framsteg(?)</h1>
-    
+        
+    <div className="registerResultBody">
+        
+        <h1 className="fylli" >Rapportera ny vikt och mått </h1>
+
+        <ReportForm/>
+
+    </div>
     );
 }
 export default RegisterResultPage

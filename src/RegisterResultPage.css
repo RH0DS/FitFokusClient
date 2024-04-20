@@ -1,0 +1,15 @@
+.registerResultBody
+{
+    border:  2px solid black;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.fylli
+{
+    height: auto;
+    border:  2px solid black;
+}
