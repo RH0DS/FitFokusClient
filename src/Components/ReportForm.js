@@ -16,12 +16,12 @@ const ReportForm = () => {
     useForm renderar inte om efter varje inmatning = bra performance
 */
   const onSubmit= (data)=>{
-    
-    setData(JSON.stringify(data))
-
-
-    console.log(JSON.stringify(data))
-    console.log(data)
+    const isConfirmed = window.confirm("Vill du skicka in dina resultat?");
+    if (isConfirmed) {
+        setData(JSON.stringify(data));
+        console.log(JSON.stringify(data));
+        console.log(data);
+    }
   }
     
     return (
