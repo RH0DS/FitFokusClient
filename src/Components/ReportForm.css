@@ -3,18 +3,29 @@
 .formet
 {
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
     border:  2px solid black;
-
     justify-content: space-between;
+    padding: 20px;
+
 }
 
 .inputField{
     display: flex;
+    
     flex-direction: row;
     /* justify-content: space-around; */
     padding-left: 20px;
 }
 .rowTitle{
     min-width: 100px;
+}
+.error{
+
+    padding-bottom: 10px;
+    padding-left: 20px;
+    color: red;
+    
+    
 }
