@@ -1,6 +1,7 @@
 
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
+import NavigateToPageButton from "../Components/NavigateToPageButton";
 
 
 const ProfilePage = () => {
@@ -12,7 +13,10 @@ const ProfilePage = () => {
     }
 
     return (
-        isAuthenticated && (
+        <>
+                { <NavigateToPageButton  toThisPage={"/"} buttonText={"Tillbaka"} />}
+     
+        {isAuthenticated && (
             <div>
             <img src={user.picture} alt={user.name} />
             <h2>{user.name}1</h2>
@@ -37,7 +41,7 @@ const ProfilePage = () => {
             
             
             </div>
-        )
-    );
+        )}
+        </>);
 };
 export default ProfilePage;

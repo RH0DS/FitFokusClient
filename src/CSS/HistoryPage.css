@@ -1,0 +1,14 @@
+.historyPageBody{
+    display: flex;
+    flex-direction: column;
+
+
+}
+.navigateTohomeButton{
+    align-self: start;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.reportResultButton{
+    align-self: center;
+}

@@ -1,5 +1,5 @@
 .registerResultBody
-{
+{ 
     border:  2px solid black;
     height: 80vh;
     display: flex;
@@ -12,4 +12,9 @@
 {
     height: auto;
     border:  2px solid black;
+}
+.navButton{
+    align-self: start;
+    padding-left: 10px;
+    padding-top: 10px;
 }
