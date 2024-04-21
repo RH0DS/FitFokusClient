@@ -41,36 +41,16 @@ const ReportForm = () => {
                     placeholder="Fyll i dagens vikt här"
                 
                     {...register("currentWeight", 
-                        // { required: 
-                        //     true,
-                        //     min: 60,
-                        //     max: 200 
-                        // })} 
-                        {
-                            validate: {
-                                requiredValues: (inputValue) => {
-                                    switch(true) {
-                                        case !inputValue:
-                                            return "Du måste fylla i en vikt din tjockis!";
-                                        case inputValue <= 60:
-                                            return "Men troligt... lägg till några kilo mer";
-                                        case inputValue >= 250:
-                                            return "Så du har ett eget gravitationsfält?.. must be nice";
-                                        default:
-                                            return "";
-                                    }
-                                }
-                            }
-                        }
-                    )}
+                    {  required: "Du måste fylla i en vikt din tjockis!",
+                        min: { value: 50,  message: "Men troligt... lägg till några kilo mer"},
+                        max:  { value: 250,  message: "Så du har ett eget gravitationsfält?.. must be nice"}
+                    }
+                )}
+
                 />
 
             </label>
 
-            {/* { 
-                errors.currentWeight && (
-                <div  className="error" role="alert">Du måste fylla i en vikt din tjockis!</div>)
-            } */}
             {
                 errors.currentWeight && 
                 <div  className="error" role="alert">{errors.currentWeight?.message}</div>
@@ -85,34 +65,15 @@ const ReportForm = () => {
                 id="currentWaist"
                 placeholder="Dagens midjemått"
 
-                // {...register("currentWaist", 
-                //     {  required: "Du måste fylla i ett midjemått, hämta ett till måttband om du behöver...",
-                //         min: 60,
-                //         max: 195 
-                //     }
-                // )}
                 {...register("currentWaist", 
-                    {  
-                        validate:{
-                        requiredValues:(inputValue) =>{
-                            
-                            switch(true) {
-                                case !inputValue:
-                                    return "Du måste fylla i ett midjemått, hämta ett till måttband om du behöver...";
-                                case inputValue <= 50:
-                                    return "Midjan för en 2åring är 50cm... kanske ska du mäta en gång till?";
-                                case inputValue >= 200:
-                                    return "Grattis! Du har uppnått en ny form nu när du är rundare än du är lång, du är en boll!";
-                                default:
-                                    return "";
-                                }
-                            }
-
-                        }   
+                    {  required: "Du måste fylla i ett midjemått, hämta ett till måttband om du behöver...",
+                        min: { value: 60,  message: "Midjan för en 2åring är 50cm... kanske ska du mäta en gång till?"},
+                        max:  { value: 200,  message: "Grattis! Du har uppnått en ny form nu när du är rundare än du är lång, du är en boll!"}
                     }
                 )}
-                        
-                />
+
+            />
+
             </label>
                 {
                     errors.currentWaist && 
