@@ -1,5 +1,5 @@
 import ReportForm from "../Components/ReportForm";
-import "../RegisterResultPage.css";
+import "../CSS/RegisterResultPage.css";
 const RegisterResultPage = () => {
    
    

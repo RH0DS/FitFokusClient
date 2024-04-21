@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../UserCard.css";
+import "../CSS/UserCard.css";
 
 const UserCard = ({ name, startWeight, currentWeight, waistWidth }) => {
   // Calculate the percentage change in weight

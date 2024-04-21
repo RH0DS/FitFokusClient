@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import UserCard from "../Components/UserCard";
 import NavigateToPageButton from "../Components/NavigateToPageButton";
-import "../Dashboard.css"
+import "../CSS/Dashboard.css"
 
 
 const Dashboard = () => {

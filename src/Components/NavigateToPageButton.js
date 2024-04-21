@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./NavigateToPageButton.css"; // Import CSS file for styling
+import "../CSS/NavigateToPageButton.css"; // Import CSS file for styling
 
 const NavigateToPageButton = ({ toThisPage, buttonText }) => {
   const navigate = useNavigate(); // Hook to perform navigation
