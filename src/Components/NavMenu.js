@@ -8,17 +8,17 @@ const NavMenu = ({ isAuthenticated }) => {
     <>
       <nav>
         <div>
-        <ul>
-                    <li className="dropdown">
-                        <a href="#">Menu</a>
-                        <div className="dropdown-content">
-                            <Link to="/">Home</Link>
-                            <Link to="History">History</Link>
-                            <Link to="Profile">Profile</Link>
-                            <Link to="RegisterResult">Register result</Link>
-                        </div>
-                    </li>
-        </ul>
+          <ul>
+            <li className="dropdown">
+                <p >Menu</p>
+                <div className="dropdown-content">
+                    <Link to="/">Home</Link>
+                    <Link to="History">History</Link>
+                    <Link to="Profile">Profile</Link>
+                    <Link to="RegisterResult">Register result</Link>
+                </div>
+            </li>
+          </ul>
         </div>
         <div className="login-button-container">
           {isAuthenticated ? <LogoutButton/> : <LoginButton/>}
