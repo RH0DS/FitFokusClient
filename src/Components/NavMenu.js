@@ -10,7 +10,8 @@ const NavMenu = ({ isAuthenticated }) => {
         <div>
           <ul>
             <li className="dropdown">
-                <p >Menu</p>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <a href="#">Menu</a>
                 <div className="dropdown-content">
                     <Link to="/">Home</Link>
                     <Link to="History">History</Link>

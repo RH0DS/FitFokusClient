@@ -43,6 +43,12 @@ ul {
 
 /* Hover effect for menu item */
 .dropdown:hover > a {
-  background-color: #6f0c0c; /* Change background color when hovered */
+  background-color: #4f504f; /* Change background color when hovered */
+  color: black;
+}
+/* Hover effect for dropdown content */
+.dropdown-content a:hover {
+  background-color: #555; /* Change background color when hovered */
+  color: rgb(137, 137, 8);
 }
 
