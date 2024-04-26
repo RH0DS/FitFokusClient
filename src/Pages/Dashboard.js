@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import UserCard from "../Components/UserCard";
 import NavigateToPageButton from "../Components/NavigateToPageButton";
 import "../CSS/Dashboard.css"
+import TailButton from "../Components/TailButton";
 
 
 const Dashboard = () => {
@@ -56,7 +57,13 @@ const Dashboard = () => {
   // const dev = false;
 
   return (
-    <div className="center-container">
+    <div className="bg-Twitter-Blue">
+
+          
+            <div className="container mx-auto mt-4">
+              <h1 className="text-xl font-bold mb-4">Welcome to My App</h1>
+              <TailButton />
+            </div>
       <div className="user-cards-container">
         <NavigateToPageButton toThisPage={"RegisterResult"} buttonText={"Registrera ny vikt / mått"} />
         <UserCard
